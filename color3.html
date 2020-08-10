@@ -3,9 +3,10 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 
-                //Change the color of the heading when dropdown changes
+                // Change the color of the heading when dropdown changes
                 document.querySelector('#color-change').onchange = function(){
                     document.querySelector('#txt').style.color = this.value;
+                    // "this" keyword can only be used when you use traditional "function()"
                 }
             });
         </script>
