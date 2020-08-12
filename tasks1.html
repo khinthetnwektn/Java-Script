@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Tasks</title>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                document.querySelector("#submit").disabled = true;
+
+                document.querySelector("#task").onkeyup = () => {
+                    document.querySelector("#submit").disabled = false;
+                }
+
+                document.querySelector("#new-task").onsubmit = () => {
+
+                    //Create li tag
+                    const li = document.createElement('li');
+                    li.innerHTML = document.querySelector("#task").value;
+
+                    document.querySelector("#tasks").append(li);
+
+                    document.querySelector("#task").value = '';
+
+                    return false;
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Tasks</h1>
+        <ul id="tasks">
+        </ul>
+        <form id="new-task">
+            <input type="text" placeholder="New Task" id="task">
+            <input type="submit" id="submit">
+        </form>        
+    </body>
+</html>
